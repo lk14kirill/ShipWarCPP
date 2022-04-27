@@ -9,32 +9,22 @@ using namespace std;
 class Game
 {
 public:
-	void Play(Player* player1,Player* player2,UI*ui);
+	void Play(Player* player1,Player* player2);
 	Game()
 	{
-		drawableField = fieldgenerator->GenerateField(Values::width, Values::height);
+		drawableField = FieldGeneration::GenerateField(Values::width, Values::height);
 	}
 	~Game()
 	{
-		delete drawer;
-		delete fieldgenerator;
-		delete player1;
-		delete player2;
-		delete ui;
-
 		drawableField.clear();
 		drawableField.shrink_to_fit();
 	}
-
 private: 
 	vector<vector<char>> drawableField;
-	Drawer * drawer = new Drawer();
-	FieldGeneration* fieldgenerator = new FieldGeneration();
 	bool isGameEnded = false;
 	Player* player1;
 	Player* player2;
 	PlayerTurn turn;
-	UI* ui;
 
 	void Update();
 	void DrawFields();

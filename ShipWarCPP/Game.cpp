@@ -1,11 +1,10 @@
 #include "Game.h"
-void Game::Play(Player* player1,Player* player2,UI* ui)
+void Game::Play(Player* player1,Player* player2)
 {
 	system("CLS");
 
 	this->player1 = player1;
 	this->player2 = player2;
-	this->ui = ui;
 	isGameEnded = false;
 
 	DrawFields();
@@ -42,19 +41,19 @@ void Game::MakeAMove(Player* attacking,Player* defending,int playerNumber)
 	hit = CheckHit(defending, hitPoint);
 	DefineNextPlayerToMove(playerNumber, hit);
 	DrawFields();
-	ui->WriteInfoAboutMove(hitPoint, attacking->name, hit);
+	UI::WriteInfoAboutMove(hitPoint, attacking->name, hit);
 }
 void Game::DrawFields()
 {
 	system("CLS");
-	drawer->Draw(drawableField, player1);
+	Drawer::Draw(drawableField, player1);
 	cout << endl;
-	drawer->Draw(drawableField, player2);
+	Drawer::Draw(drawableField, player2);
 }
 Point Game::Attack(Player* player,Player * defending)
 {
 	if (player->type == PlayerType::hum)
-		return ui->AskForAttack();
+		return UI::AskForAttack();
 	else
 		return GenerateAttackPoint(player,defending->ships);
 }
@@ -100,7 +99,7 @@ bool Game::CheckHit(Player * playerToHit,Point point)
 		playerToHit->missesOnThisPlayerField.push_back(point);
 	return hitShip;
 }
-void Game::DefineNextPlayerToMove(int playerNumber,bool hit)
+void Game::DefineNextPlayerToMove(int numberPlayerThatMoved,bool hit)
 {
 	if (hit)
 	{
@@ -108,9 +107,9 @@ void Game::DefineNextPlayerToMove(int playerNumber,bool hit)
 	}
 	else
 	{
-		if (playerNumber == 1)
+		if (numberPlayerThatMoved == 1)
 			turn = PlayerTurn::second;
-		else if (playerNumber == 2)
+		else if (numberPlayerThatMoved == 2)
 			turn = PlayerTurn::first;
 	}
 }

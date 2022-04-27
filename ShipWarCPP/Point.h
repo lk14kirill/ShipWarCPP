@@ -11,6 +11,5 @@ public:
 		if (x == r.x && y == r.y)return true;
 		return false;
 	}
-
 };
 

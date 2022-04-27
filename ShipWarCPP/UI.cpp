@@ -28,10 +28,10 @@ void UI::Greetings()
 }
 bool UI::AskForGame()
 {
-	cout << "Do you want to play again?Y/n" << endl;
-	string answer = "";
+	WriteColoredSentence("Do you want to play again?Y/n", 15);
     while(true)
 	{
+	    string answer = "";
 		cin >> answer;
 		if (tolower(answer[0]) == 'n')
 			return false;
@@ -50,7 +50,7 @@ int UI::AskForShipQuantity()
 
 	while(true)
 	{
-		cout << "Type quantity of ships(between 1 and " << maximum << ")" << endl;
+		WriteColoredSentence("Type quantity of ships(between 1 and " + to_string(maximum) + ")", 10);
 		cin >> quant;
 		if (quant > 0 && quant <= maximum)
 			return quant;
@@ -61,7 +61,8 @@ Point UI::AskForAttack()
 	string symbols = "0Z";
 	while (!IsInRange(symbols))
 	{
-		cout << "Write your attack point!Example: 7D,4f" << endl;
+		cin.ignore();
+		cout << "Write your attack point!    Example: 7D,4f" << endl;
 		cin>>symbols;
 	}
 	return Point(toupper(symbols[1]) - 64, symbols[0] - '0');
@@ -75,20 +76,20 @@ bool UI::IsInRange(string symbols)
 }
 void UI::DeclareAWinner(string name)
 {
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hConsole, 10);
-	cout << name << " has won the game!";
-	SetConsoleTextAttribute(hConsole, 15);
+	WriteColoredSentence(name + " has won the game", 10);
 }
 void UI::WriteInfoAboutMove(Point hitPoint,string name,bool hit)
 {
 	string point = to_string(hitPoint.y) + (char)(hitPoint.x + 64);
 	if (hit)
-	{
-		cout << name << " hit " << point << "!" << endl;
-	}
+		WriteColoredSentence(name + " hit " + point + "!", 12);
 	else
-	{
-		cout << name << " missed at " << point << "!" << endl;
-	}
+		WriteColoredSentence(name + " missed at " + point + "!", 14);
+}
+void UI::WriteColoredSentence(string sentence,int color)
+{
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, color);
+	cout << sentence << endl;
+	SetConsoleTextAttribute(hConsole, 15);
 }

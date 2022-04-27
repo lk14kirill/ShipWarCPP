@@ -7,11 +7,5 @@ class Lobby
 {
 public:
 	void Start();
-	~Lobby()
-	{
-		delete ui;
-	}
-private:
-	UI * ui = new UI();
 };
 
