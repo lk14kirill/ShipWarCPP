@@ -3,6 +3,7 @@
 #include <iostream>
 #include <windows.h>
 #include "Player.h"
+#include "Values.h"
 
 using namespace std;
 class Drawer

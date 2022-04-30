@@ -1,12 +1,15 @@
 #include "Player.h"
-Player::Player(int shipsQuantity, PlayerType type, string name)
+Player::Player(int shipsQuantity, PlayerType type,bool areShipsHidden)
 {
 	ships = ShipGeneration::GenerateShips(shipsQuantity);
 	this->type = type;
 	this->name = name;
 	this->shipsQuantity = shipsQuantity;
+	this->areShipsHidden = areShipsHidden;
 	if (type == PlayerType::ai)
-		areShipsHidden = true;
+		name = "Bot";
+	else
+		name = "Human";
 }
 Player::~Player()
 {

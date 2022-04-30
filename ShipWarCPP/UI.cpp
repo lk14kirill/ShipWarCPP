@@ -93,3 +93,18 @@ void UI::WriteColoredSentence(string sentence,int color)
 	cout << sentence << endl;
 	SetConsoleTextAttribute(hConsole, 15);
 }
+PlayerType UI::AskForPlayerType()
+{
+	system("CLS");
+	char input;
+	while(true)
+	{
+       WriteColoredSentence("Choose player type h(human) or b(bot)", 10);
+	   cin.ignore();
+	   cin >> input;
+	   input = tolower(input);
+	   if (input == 'h' || input == 'b')
+		   break;
+	}
+	return (input == 'h') ? PlayerType::hum : PlayerType::ai;
+}

@@ -1,4 +1,6 @@
 #include "Game.h"
+#include "Player.h"
+
 Game::Game()
 {
 	drawableField = FieldGeneration::GenerateField(Values::width, Values::height);
@@ -14,7 +16,6 @@ void Game::Play(Player* player1,Player* player2)
 
 	this->player1 = player1;
 	this->player2 = player2;
-	isGameEnded = false;
 
 	DrawFields();
 	Update();
@@ -30,10 +31,10 @@ void Game::Update()
 		switch(numberOfPlayerToMove)
 		{
 		case 0:
-			MakeAMove(player1, player2, 1);
+			MakeAMove(player1, player2, numberOfPlayerToMove);
 			break;
 		case 1:
-			MakeAMove(player2, player1, 2);
+			MakeAMove(player2, player1, numberOfPlayerToMove);
 			break; 
 		}
 		CheckForWinner(player1, player2);
@@ -45,8 +46,17 @@ void Game::MakeAMove(Player* attacking,Player* defending,int playerNumber)
 	Point hitPoint = Attack(attacking,defending);
 	bool hit = CheckHit(defending, hitPoint);
 	DefineNextPlayerToMove(playerNumber, hit);
+	ChangeShipsVisibilityIfHumans(attacking, defending);
 	DrawFields();
 	UI::WriteInfoAboutMove(hitPoint, attacking->GetName(), hit);
+}
+void Game::ChangeShipsVisibilityIfHumans(Player* attacking, Player* defending)
+{
+	if (attacking->GetType() == PlayerType::hum && defending->GetType() == PlayerType::hum)
+	{
+		attacking->SetShipsVisibility(true);
+		defending->SetShipsVisibility(false);
+	}
 }
 void Game::DrawFields()
 {
@@ -116,8 +126,8 @@ void Game::DefineNextPlayerToMove(int numberPlayerThatMoved,bool hit)
 	{
 		if (numberPlayerThatMoved == 0)
 			numberOfPlayerToMove+=1;
-		else if (numberPlayerThatMoved == 1) //kostil4iki
-			numberOfPlayerToMove -= 1;
+		else
+			numberOfPlayerToMove -= 1; //kostil4iki
 	}
 }
 void Game::CheckForWinner(Player * playerToLose,Player* playerToWin)

@@ -9,11 +9,12 @@ using namespace std;
 class Player
 {
 public:
-	Player(int shipsQuantity, PlayerType type, string name);
+	Player(int shipsQuantity, PlayerType type,bool areShipsHidden);
 	~Player();
 	vector<Point> missesOnThisPlayerField;
 	vector<Ship> ships;
     
+	void SetShipsVisibility(bool areHidden) { areShipsHidden = areHidden; };
 	int GetShipsQuantity() { return shipsQuantity; }
 	bool AreShipsHidden() { return areShipsHidden; }
 	PlayerType GetType() { return type; }

@@ -1,10 +1,10 @@
 #pragma once
 #include <vector>
 #include "Values.h"
-#include "Player.h"
 #include "Drawer.h"
 #include "FieldGeneration.h"
 #include "UI.h"
+class Player;
 using namespace std;
 class Game
 {
@@ -24,6 +24,7 @@ private:
 	void DefineNextPlayerToMove(int numberPlayerThatMoved , bool hit);
 	void CheckForWinner(Player* player,Player* playerToWin);
 	void MakeAMove(Player* attacking, Player* defending,int playerNumber);
+	void ChangeShipsVisibilityIfHumans(Player* attacking, Player* defending);
 	Point Attack(Player* player,Player* defending);
 	Point GenerateAttackPoint(Player* player,vector<Ship> enemyShips);
 	bool ifShipAlreadyShot(vector<Ship>ships,Point pointToCheck);
