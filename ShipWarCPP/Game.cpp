@@ -27,12 +27,12 @@ void Game::Update()
 		Sleep(1500);
 		cout << endl;
 
-		switch(turn)
+		switch(numberOfPlayerToMove)
 		{
-		case PlayerTurn::first:
+		case 0:
 			MakeAMove(player1, player2, 1);
 			break;
-		case PlayerTurn::second:
+		case 1:
 			MakeAMove(player2, player1, 2);
 			break; 
 		}
@@ -92,7 +92,7 @@ bool Game::ifShipAlreadyShot(vector<Ship> ships,Point pointToCheck)
 bool Game::CheckHit(Player * playerToHit,Point point)
 {
 	bool hitShip = false;
-	for(int i =0;i<playerToHit->ships.size();i++)
+	for(int i =0;i<playerToHit->GetShipsQuantity(); i++)
 	{
 		if (playerToHit->ships[i].coords == point)
 		{
@@ -114,10 +114,10 @@ void Game::DefineNextPlayerToMove(int numberPlayerThatMoved,bool hit)
 	}
 	else
 	{
-		if (numberPlayerThatMoved == 1)
-			turn = PlayerTurn::second;
-		else if (numberPlayerThatMoved == 2)
-			turn = PlayerTurn::first;
+		if (numberPlayerThatMoved == 0)
+			numberOfPlayerToMove+=1;
+		else if (numberPlayerThatMoved == 1) //kostil4iki
+			numberOfPlayerToMove -= 1;
 	}
 }
 void Game::CheckForWinner(Player * playerToLose,Player* playerToWin)

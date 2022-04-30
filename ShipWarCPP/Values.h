@@ -1,7 +1,6 @@
 #pragma once
 enum class ShipState {alive,destroyed};
 enum class PlayerType {ai,hum};
-enum class PlayerTurn {first,second};
 class Values
 {
 public:

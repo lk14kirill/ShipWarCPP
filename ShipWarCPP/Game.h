@@ -17,7 +17,7 @@ private:
 	bool isGameEnded = false;
 	Player* player1;
 	Player* player2;
-	PlayerTurn turn;
+	int numberOfPlayerToMove = 0;
 
 	void Update();
 	void DrawFields();

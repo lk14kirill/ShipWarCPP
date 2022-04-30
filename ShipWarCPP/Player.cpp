@@ -4,6 +4,7 @@ Player::Player(int shipsQuantity, PlayerType type, string name)
 	ships = ShipGeneration::GenerateShips(shipsQuantity);
 	this->type = type;
 	this->name = name;
+	this->shipsQuantity = shipsQuantity;
 	if (type == PlayerType::ai)
 		areShipsHidden = true;
 }

@@ -13,14 +13,16 @@ public:
 	~Player();
 	vector<Point> missesOnThisPlayerField;
 	vector<Ship> ships;
- 
-	PlayerType GetType() { return type; }
+    
+	int GetShipsQuantity() { return shipsQuantity; }
 	bool AreShipsHidden() { return areShipsHidden; }
+	PlayerType GetType() { return type; }
 	string GetName() { return name; }
 private:
 	PlayerType type;
 	string name;
 	bool areShipsHidden = false;
+	int shipsQuantity;
 };
 
 
