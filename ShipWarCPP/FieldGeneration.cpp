@@ -14,7 +14,6 @@ vector<vector<char>> FieldGeneration::GenerateField(int width,int height)
 	field = PlaceLetters(field,width,height);
 	return field;
 }
-
 vector<vector<char>> FieldGeneration::PlaceNumbers(vector<vector<char>> field,int width,int height)
 {
 	int number = Values::asciiNumberStart;

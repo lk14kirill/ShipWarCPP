@@ -9,25 +9,18 @@ using namespace std;
 class Player
 {
 public:
-	Player(int shipsQuantity,PlayerType type,string name)
-	{
-		ships = ShipGeneration::GenerateShips(shipsQuantity);
-		this->type = type;
-		this->name = name;
-		if (type == PlayerType::ai)
-			areShipsHidden = true;
-	}
-	~Player()
-	{
-		ships.clear();
-		ships.shrink_to_fit();
-		missesOnThisPlayerField.clear();
-		missesOnThisPlayerField.shrink_to_fit();
-	}
-	vector<Ship> ships;
+	Player(int shipsQuantity, PlayerType type, string name);
+	~Player();
 	vector<Point> missesOnThisPlayerField;
+	vector<Ship> ships;
+ 
+	PlayerType GetType() { return type; }
+	bool AreShipsHidden() { return areShipsHidden; }
+	string GetName() { return name; }
+private:
 	PlayerType type;
 	string name;
 	bool areShipsHidden = false;
 };
+
 

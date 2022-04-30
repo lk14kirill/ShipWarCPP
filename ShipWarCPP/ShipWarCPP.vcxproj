@@ -143,6 +143,7 @@
     <ClCompile Include="FieldGeneration.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Lobby.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="ShipGeneration.cpp" />
     <ClCompile Include="ShipWarCPP.cpp" />
     <ClCompile Include="UI.cpp" />
@@ -154,10 +155,14 @@
     <ClInclude Include="Lobby.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Ship.h" />
     <ClInclude Include="ShipGeneration.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Values.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ShipWarCPP.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

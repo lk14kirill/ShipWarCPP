@@ -2,7 +2,6 @@
 vector<Ship> ShipGeneration::GenerateShips(int quantity)
 {
 	vector<Ship> ships(quantity);
-	;
 	for (int i = 0; i < quantity; i++) 
 	{
 		Point newCoords;

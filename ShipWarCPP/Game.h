@@ -10,15 +10,8 @@ class Game
 {
 public:
 	void Play(Player* player1,Player* player2);
-	Game()
-	{
-		drawableField = FieldGeneration::GenerateField(Values::width, Values::height);
-	}
-	~Game()
-	{
-		drawableField.clear();
-		drawableField.shrink_to_fit();
-	}
+	Game();
+	~Game();
 private: 
 	vector<vector<char>> drawableField;
 	bool isGameEnded = false;

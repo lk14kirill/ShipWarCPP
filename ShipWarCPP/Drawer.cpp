@@ -22,7 +22,7 @@ void Drawer::Draw(vector<vector<char>> field,Player* player)
 }
 vector<vector<char>> Drawer::ConcatArrayAndPlayer(vector<vector<char>> field,Player* player)
 {
-	if (player->areShipsHidden)
+	if (player->AreShipsHidden())
 	{
 		field = ConcatArrayAndMisses(field, player->missesOnThisPlayerField);
 		return ConcatArrayAndDestroyedShips(field, player->ships);

@@ -11,8 +11,6 @@ void Lobby::Start()
 		Player * player2 = new Player(shipsQuantity,PlayerType::ai,"Bot");
 		game->Play(player1, player2);
 
-
-
 		delete player1;
 		delete player2;
 		delete game;

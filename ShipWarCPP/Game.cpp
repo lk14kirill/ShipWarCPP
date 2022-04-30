@@ -1,4 +1,13 @@
 #include "Game.h"
+Game::Game()
+{
+	drawableField = FieldGeneration::GenerateField(Values::width, Values::height);
+}
+Game::~Game()
+{
+	drawableField.clear();
+	drawableField.shrink_to_fit();
+}
 void Game::Play(Player* player1,Player* player2)
 {
 	system("CLS");
@@ -27,21 +36,17 @@ void Game::Update()
 			MakeAMove(player2, player1, 2);
 			break; 
 		}
-		
 		CheckForWinner(player1, player2);
 		CheckForWinner(player2, player1);
-
 	}
 }
 void Game::MakeAMove(Player* attacking,Player* defending,int playerNumber)
 {
-	Point hitPoint;
-	bool hit = false;
-	hitPoint = Attack(attacking,defending);
-	hit = CheckHit(defending, hitPoint);
+	Point hitPoint = Attack(attacking,defending);
+	bool hit = CheckHit(defending, hitPoint);
 	DefineNextPlayerToMove(playerNumber, hit);
 	DrawFields();
-	UI::WriteInfoAboutMove(hitPoint, attacking->name, hit);
+	UI::WriteInfoAboutMove(hitPoint, attacking->GetName(), hit);
 }
 void Game::DrawFields()
 {
@@ -52,7 +57,7 @@ void Game::DrawFields()
 }
 Point Game::Attack(Player* player,Player * defending)
 {
-	if (player->type == PlayerType::hum)
+	if (player->GetType() == PlayerType::hum)
 		return UI::AskForAttack();
 	else
 		return GenerateAttackPoint(player,defending->ships);
@@ -96,7 +101,9 @@ bool Game::CheckHit(Player * playerToHit,Point point)
 		}
 	}
 	if (!hitShip)
+	{
 		playerToHit->missesOnThisPlayerField.push_back(point);
+	}
 	return hitShip;
 }
 void Game::DefineNextPlayerToMove(int numberPlayerThatMoved,bool hit)
@@ -115,11 +122,11 @@ void Game::DefineNextPlayerToMove(int numberPlayerThatMoved,bool hit)
 }
 void Game::CheckForWinner(Player * playerToLose,Player* playerToWin)
 {
-	for(Ship ship:playerToLose->ships)
+	for(Ship& ship:playerToLose->ships)
 	{
 		if (ship.state == ShipState::alive)
 			return;
 	}
 	isGameEnded = true;
-	ui->DeclareAWinner(playerToWin->name);
+	UI::DeclareAWinner(playerToWin->GetName());
 }
