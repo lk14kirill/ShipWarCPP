@@ -1,4 +1,8 @@
 #include "ShipGeneration.h"
+#include "Values.h"
+#include "Ship.h" 
+#include "Point.h"
+
 vector<Ship> ShipGeneration::GenerateShips(int quantity)
 {
 	vector<Ship> ships(quantity);

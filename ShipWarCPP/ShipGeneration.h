@@ -1,9 +1,10 @@
 #pragma once
 #include <vector>
-#include "Ship.h" 
-#include "Values.h"
-#include "Point.h"
+struct Point;
+struct Ship;
+
 using namespace std;
+
 class ShipGeneration
 {
 public:

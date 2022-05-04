@@ -2,8 +2,10 @@
 #include <vector>
 #include <iostream>
 #include <windows.h>
-#include "Player.h"
-#include "Values.h"
+
+struct Point;
+struct Ship;
+class Player;
 
 using namespace std;
 class Drawer

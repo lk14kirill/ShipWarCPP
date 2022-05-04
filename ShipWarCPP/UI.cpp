@@ -1,5 +1,10 @@
+#include <cctype>
+#include <iostream>
+#include <windows.h>
 #include "UI.h"
 #include "Drawer.h"
+#include "Point.h"
+
 void UI::Greetings()
 {
 	system("CLS");
@@ -59,10 +64,13 @@ int UI::AskForShipQuantity()
 Point UI::AskForAttack()
 {
 	string symbols = "0Z";
+	cout << "Write your attack point!    Example: 7D,4f" << endl;
+	cin.ignore();
+	cin >> symbols;
 	while (!IsInRange(symbols))
 	{
 		cin.ignore();
-		cout << "Write your attack point!    Example: 7D,4f" << endl;
+		WriteColoredSentence("Write within the field!", 12);
 		cin>>symbols;
 	}
 	return Point(toupper(symbols[1]) - 64, symbols[0] - '0');

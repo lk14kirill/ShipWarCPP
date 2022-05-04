@@ -1,9 +1,14 @@
 #include "Lobby.h"
+#include "Game.h"
+#include "Player.h"
+#include "UI.h"
+#include "Matchmaker.h"
+#include <tuple>
+
 void Lobby::Start()
 {
 	do
 	{
-		Game* game = new Game();
 		UI::Greetings();
 		int shipsQuantity = UI::AskForShipQuantity();
 
@@ -13,6 +18,8 @@ void Lobby::Start()
 
  		Player * player1 = new Player(shipsQuantity,firstType,get<0>(areShipsHidden));
 		Player * player2 = new Player(shipsQuantity,secondType, get<1>(areShipsHidden));
+
+		Game* game = new Game();
 		game->Play(player1, player2);
 
 		delete player1;

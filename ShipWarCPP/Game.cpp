@@ -1,5 +1,10 @@
 #include "Game.h"
 #include "Player.h"
+#include "Drawer.h"
+#include "FieldGeneration.h"
+#include "UI.h"
+#include "Point.h"
+#include "Ship.h"
 
 Game::Game()
 {
@@ -18,9 +23,9 @@ void Game::Play(Player* player1,Player* player2)
 	this->player2 = player2;
 
 	DrawFields();
-	Update();
+	Cycle();
 }
-void Game::Update()
+void Game::Cycle()
 {
 	while(isGameEnded == 0)
 	{
@@ -132,7 +137,7 @@ void Game::DefineNextPlayerToMove(int numberPlayerThatMoved,bool hit)
 }
 void Game::CheckForWinner(Player * playerToLose,Player* playerToWin)
 {
-	for(Ship& ship:playerToLose->ships)
+	for(const Ship& ship:playerToLose->ships)
 	{
 		if (ship.state == ShipState::alive)
 			return;

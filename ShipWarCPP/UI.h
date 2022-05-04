@@ -1,9 +1,9 @@
 #pragma once
-#include <iostream>
-#include <cctype>
-#include <windows.h>
 #include "Values.h"
-#include "Point.h"
+#include <string>
+
+struct Point;
+
 using namespace std;
 
 class UI

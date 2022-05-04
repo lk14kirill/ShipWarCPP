@@ -1,4 +1,8 @@
 #include "Drawer.h"
+#include "Player.h"
+#include "Values.h"
+#include "Point.h"
+#include "Ship.h"
 void Drawer::Draw(vector<vector<char>> field,Player* player)
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);

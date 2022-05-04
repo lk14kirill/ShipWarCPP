@@ -2,9 +2,10 @@
 #include <vector>
 #include <string>
 #include "Values.h"
-#include "Ship.h"
-#include "ShipGeneration.h"
-#include "Values.h"
+
+struct Ship;
+struct Point;
+
 using namespace std;
 class Player
 {
@@ -14,11 +15,11 @@ public:
 	vector<Point> missesOnThisPlayerField;
 	vector<Ship> ships;
     
-	void SetShipsVisibility(bool areHidden) { areShipsHidden = areHidden; };
-	int GetShipsQuantity() { return shipsQuantity; }
-	bool AreShipsHidden() { return areShipsHidden; }
-	PlayerType GetType() { return type; }
-	string GetName() { return name; }
+	void SetShipsVisibility(bool areHidden);
+	int GetShipsQuantity();
+	bool AreShipsHidden();
+	PlayerType GetType();
+	string GetName();
 private:
 	PlayerType type;
 	string name;
