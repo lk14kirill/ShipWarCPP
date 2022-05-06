@@ -15,7 +15,10 @@ public:
 	vector<Point> missesOnThisPlayerField;
 	vector<Ship> ships;
     
+	void UpdateValues(int shipsQuantity);
 	void SetShipsVisibility(bool areHidden);
+	void AddWin();
+	int GetWins();
 	int GetShipsQuantity();
 	bool AreShipsHidden();
 	PlayerType GetType();
@@ -25,6 +28,7 @@ private:
 	string name;
 	bool areShipsHidden = false;
 	int shipsQuantity;
+	int wins = 0;
 };
 
 

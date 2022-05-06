@@ -1,5 +1,6 @@
 #include <cctype>
 #include <iostream>
+#include "Player.h"
 #include <windows.h>
 #include "UI.h"
 #include "Drawer.h"
@@ -43,6 +44,21 @@ bool UI::AskForGame()
 		if (tolower(answer[0]) == 'y')
 			return true;
 		cout << "Type y or n."<< endl;
+	}
+	return false;
+}
+bool UI::AskForUpdatingPlayers()
+{
+	WriteColoredSentence("Do you want to change players?Y/n", 15);
+	while (true)
+	{
+		string answer = "";
+		cin >> answer;
+		if (tolower(answer[0]) == 'n')
+			return false;
+		if (tolower(answer[0]) == 'y')
+			return true;
+		cout << "Type y or n." << endl;
 	}
 	return false;
 }
@@ -115,4 +131,12 @@ PlayerType UI::AskForPlayerType()
 		   break;
 	}
 	return (input == 'h') ? PlayerType::hum : PlayerType::ai;
+}
+void  UI::ShowResult(Player* player1,Player* player2,int gamesCount)
+{
+	system("CLS");
+	WriteColoredSentence(player1->GetName()+':' + to_string(player1->GetWins()) + "wins.", 10);
+	WriteColoredSentence(player2->GetName() + ':' + to_string(player2->GetWins()) + "wins.", 10);
+	WriteColoredSentence("Games played:"+to_string(gamesCount), 10);
+	cout<<endl;
 }

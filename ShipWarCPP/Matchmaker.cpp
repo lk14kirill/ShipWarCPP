@@ -1,4 +1,6 @@
 #include "Matchmaker.h"
+#include "Player.h"
+#include "UI.h"
 tuple<bool,bool> Matchmaker::DefineWhosShipsAreHidden(PlayerType first,PlayerType second)
 {
 	if (first == PlayerType::ai && second == PlayerType::ai)

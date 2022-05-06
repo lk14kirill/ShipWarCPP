@@ -3,12 +3,19 @@
 #include "Ship.h"
 
 int Player::GetShipsQuantity() { return shipsQuantity; }
+int Player::GetWins() { return wins; }
 bool Player::AreShipsHidden() { return areShipsHidden; }
 PlayerType Player::GetType() { return type; }
 string Player::GetName() { return name; }
 void Player::SetShipsVisibility(bool areHidden) { areShipsHidden = areHidden; }
+void Player::AddWin() { wins += 1; }
 
-
+void Player::UpdateValues(int shipsQuantity)
+{
+	ships = ShipGeneration::GenerateShips(shipsQuantity);
+	this->shipsQuantity = shipsQuantity;
+	missesOnThisPlayerField.clear();
+}
 Player::Player(int shipsQuantity, PlayerType type,bool areShipsHidden)
 {
 	ships = ShipGeneration::GenerateShips(shipsQuantity);

@@ -30,7 +30,7 @@ void Game::Cycle()
 	while(isGameEnded == 0)
 	{
 		srand(time(0));
-		Sleep(1500);
+		Sleep(1000);
 		cout << endl;
 
 		switch(numberOfPlayerToMove)
@@ -144,4 +144,5 @@ void Game::CheckForWinner(Player * playerToLose,Player* playerToWin)
 	}
 	isGameEnded = true;
 	UI::DeclareAWinner(playerToWin->GetName());
+	playerToWin->AddWin();
 }
