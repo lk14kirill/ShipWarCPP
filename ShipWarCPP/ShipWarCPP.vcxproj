@@ -139,24 +139,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DBManager.cpp" />
     <ClCompile Include="Drawer.cpp" />
     <ClCompile Include="FieldGeneration.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Lobby.cpp" />
     <ClCompile Include="Matchmaker.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerProfile.cpp" />
+    <ClCompile Include="ProfilesList.cpp" />
     <ClCompile Include="ShipGeneration.cpp" />
     <ClCompile Include="ShipWarCPP.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DBManager.h" />
     <ClInclude Include="Drawer.h" />
     <ClInclude Include="FieldGeneration.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Lobby.h" />
     <ClInclude Include="Matchmaker.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerProfile.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="ProfilesList.h" />
     <ClInclude Include="Ship.h" />
     <ClInclude Include="ShipGeneration.h" />
     <ClInclude Include="UI.h" />
