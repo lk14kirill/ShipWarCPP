@@ -16,7 +16,7 @@ void Player::UpdateValues(int shipsQuantity)
 	this->shipsQuantity = shipsQuantity;
 	missesOnThisPlayerField.clear();
 }
-Player::Player(int shipsQuantity, PlayerType type,bool areShipsHidden)
+Player::Player(string name,int shipsQuantity, PlayerType type,bool areShipsHidden)
 {
 	ships = ShipGeneration::GenerateShips(shipsQuantity);
 	this->type = type;
@@ -25,8 +25,6 @@ Player::Player(int shipsQuantity, PlayerType type,bool areShipsHidden)
 	this->areShipsHidden = areShipsHidden;
 	if (type == PlayerType::ai)
 		name = "Bot";
-	else
-		name = "Human";
 }
 Player::~Player()
 {

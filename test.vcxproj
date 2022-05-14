@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{8563B84A-37D3-40CB-BB7E-CAC78F68D9BC}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="shipwarcpp\DBManager.cpp" />
+    <ClCompile Include="shipwarcpp\Drawer.cpp" />
+    <ClCompile Include="shipwarcpp\FieldGeneration.cpp" />
+    <ClCompile Include="shipwarcpp\Game.cpp" />
+    <ClCompile Include="shipwarcpp\Lobby.cpp" />
+    <ClCompile Include="shipwarcpp\Matchmaker.cpp" />
+    <ClCompile Include="shipwarcpp\Player.cpp" />
+    <ClCompile Include="shipwarcpp\PlayerProfile.cpp" />
+    <ClCompile Include="shipwarcpp\ShipGeneration.cpp" />
+    <ClCompile Include="shipwarcpp\ShipWarCPP.cpp" />
+    <ClCompile Include="shipwarcpp\UI.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="shipwarcpp\DBManager.h" />
+    <ClInclude Include="shipwarcpp\Drawer.h" />
+    <ClInclude Include="shipwarcpp\FieldGeneration.h" />
+    <ClInclude Include="shipwarcpp\Game.h" />
+    <ClInclude Include="shipwarcpp\include\pqxx\array.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\binarystring.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\blob.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\composite.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\config-public-compiler.h" />
+    <ClInclude Include="shipwarcpp\include\pqxx\connection.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\cursor.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\dbtransaction.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\errorhandler.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\except.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\field.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\array-composite.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\callgate.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\concat.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\conversions.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\encodings.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\encoding_group.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\connection-errorhandler.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\connection-largeobject.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\connection-notification_receiver.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\connection-pipeline.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\connection-sql_cursor.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\connection-stream_from.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\connection-stream_to.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\connection-transaction.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\errorhandler-connection.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\icursorstream-icursor_iterator.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\icursor_iterator-icursorstream.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\result-connection.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\result-creation.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\result-pipeline.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\result-sql_cursor.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\transaction-sql_cursor.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\transaction-transaction_focus.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\header-post.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\header-pre.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\ignore-deprecated-post.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\ignore-deprecated-pre.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\libpq-forward.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\result_iter.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\result_iterator.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\sql_cursor.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\statement_parameters.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\stream_iterator.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\wait.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\isolation.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\largeobject.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\nontransaction.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\notification.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\params.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\pipeline.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\prepared_statement.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\range.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\result.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\robusttransaction.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\row.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\separated_list.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\strconv.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\stream_from.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\stream_to.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\subtransaction.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\time.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\transaction.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\transaction_base.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\transaction_focus.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\transactor.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\types.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\util.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\version.hxx" />
+    <ClInclude Include="shipwarcpp\include\pqxx\zview.hxx" />
+    <ClInclude Include="shipwarcpp\Lobby.h" />
+    <ClInclude Include="shipwarcpp\Matchmaker.h" />
+    <ClInclude Include="shipwarcpp\Player.h" />
+    <ClInclude Include="shipwarcpp\PlayerProfile.h" />
+    <ClInclude Include="shipwarcpp\Point.h" />
+    <ClInclude Include="shipwarcpp\resource.h" />
+    <ClInclude Include="shipwarcpp\Ship.h" />
+    <ClInclude Include="shipwarcpp\ShipGeneration.h" />
+    <ClInclude Include="shipwarcpp\UI.h" />
+    <ClInclude Include="shipwarcpp\Values.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="shipwarcpp\ShipWarCPP.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

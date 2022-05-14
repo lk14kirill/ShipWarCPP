@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="shipwarcpp\DBManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shipwarcpp\Drawer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shipwarcpp\FieldGeneration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shipwarcpp\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shipwarcpp\Lobby.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shipwarcpp\Matchmaker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shipwarcpp\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shipwarcpp\PlayerProfile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shipwarcpp\ShipGeneration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shipwarcpp\ShipWarCPP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shipwarcpp\UI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="shipwarcpp\DBManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\Drawer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\FieldGeneration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\Lobby.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\Matchmaker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\PlayerProfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\Point.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\Ship.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\ShipGeneration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\UI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\Values.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\config-public-compiler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\array.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\binarystring.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\blob.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\composite.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\connection.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\cursor.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\dbtransaction.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\errorhandler.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\except.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\field.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\isolation.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\largeobject.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\nontransaction.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\notification.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\params.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\pipeline.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\prepared_statement.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\range.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\result.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\robusttransaction.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\row.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\separated_list.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\strconv.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\stream_from.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\stream_to.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\subtransaction.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\time.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\transaction.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\transaction_base.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\transaction_focus.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\transactor.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\types.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\util.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\version.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\zview.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\array-composite.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\callgate.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\concat.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\conversions.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\encodings.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\encoding_group.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\header-post.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\header-pre.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\ignore-deprecated-post.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\ignore-deprecated-pre.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\libpq-forward.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\result_iter.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\result_iterator.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\sql_cursor.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\statement_parameters.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\stream_iterator.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\wait.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\connection-errorhandler.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\connection-largeobject.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\connection-notification_receiver.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\connection-pipeline.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\connection-sql_cursor.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\connection-stream_from.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\connection-stream_to.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\connection-transaction.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\errorhandler-connection.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\icursorstream-icursor_iterator.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\icursor_iterator-icursorstream.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\result-connection.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\result-creation.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\result-pipeline.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\result-sql_cursor.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\transaction-sql_cursor.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipwarcpp\include\pqxx\internal\gates\transaction-transaction_focus.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="shipwarcpp\ShipWarCPP.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
