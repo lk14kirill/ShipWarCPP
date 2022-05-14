@@ -3,6 +3,8 @@
 #include "Values.h"
 #include "Point.h"
 #include "Ship.h"
+#include <windows.h>
+#include <iostream>
 void Drawer::Draw(vector<vector<char>> field,Player* player)
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);

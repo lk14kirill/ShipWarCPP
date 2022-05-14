@@ -10,7 +10,7 @@ using namespace std;
 class Player
 {
 public:
-	Player(int shipsQuantity, PlayerType type,bool areShipsHidden);
+	Player(string name ,int shipsQuantity, PlayerType type,bool areShipsHidden);
 	~Player();
 	vector<Point> missesOnThisPlayerField;
 	vector<Ship> ships;

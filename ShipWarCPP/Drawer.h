@@ -1,7 +1,5 @@
 #pragma once
 #include <vector>
-#include <iostream>
-#include <windows.h>
 
 struct Point;
 struct Ship;

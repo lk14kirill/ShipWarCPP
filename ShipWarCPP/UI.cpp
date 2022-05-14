@@ -5,6 +5,8 @@
 #include "UI.h"
 #include "Drawer.h"
 #include "Point.h"
+#include "PlayerProfile.h";
+#include "DBManager.h"
 
 void UI::Greetings()
 {
@@ -31,6 +33,66 @@ void UI::Greetings()
 	SetConsoleTextAttribute(hConsole, 15);
 	char s;
 	cin >>s;
+}
+bool UI::DoYouHaveAccount()
+{
+	WriteColoredSentence("Do you have account?Y/n", 15);
+	while (true)
+	{
+		string answer = "";
+		cin >> answer;
+		if (tolower(answer[0]) == 'n')
+			return false;
+		if (tolower(answer[0]) == 'y')
+			return true;
+		cout << "Type y or n." << endl;
+	}
+	return false;
+}
+PlayerProfile UI::GetValuesForNewAccount(DBManager * dbManager)
+{
+	string name;
+	string login;
+	string password;
+	WriteColoredSentence("---Account creation---", 15);
+	WriteColoredSentence("Type your name(it will be shown in game)", 15);
+	cin >> name;
+
+	WriteColoredSentence("Type your login", 15);
+	cin >> login;
+
+	while (dbManager->IsLoginUsed(login))
+	{
+		WriteColoredSentence("This login is used.Type your login", 15);
+		cin >> login;
+	}
+
+	WriteColoredSentence("Type your password", 15);
+	cin >> password;
+	return PlayerProfile(name, 0, AskForPlayerType(), login, password);
+}
+tuple<string,string> UI::GetValuesForExistingAccount(DBManager* dbManager)
+{
+    string login;  
+	string password;
+	do
+	{
+		tuple<string,string> logAndPswrd= GetLoginAndPassword(); // neyveren
+		login = get<0>(logAndPswrd);
+		password = get<1>(logAndPswrd);
+
+	} while (dbManager->IsProfileValid(login, password));
+	return make_tuple(login, password);
+}
+tuple<string,string> UI::GetLoginAndPassword()
+{
+	string login;
+	string password;
+	WriteColoredSentence("Type your login", 15);
+	cin >> login;
+	WriteColoredSentence("Type your password", 15);
+	cin >> password;
+	return make_tuple(login, password);
 }
 bool UI::AskForGame()
 {
@@ -119,7 +181,6 @@ void UI::WriteColoredSentence(string sentence,int color)
 }
 PlayerType UI::AskForPlayerType()
 {
-	system("CLS");
 	char input;
 	while(true)
 	{
