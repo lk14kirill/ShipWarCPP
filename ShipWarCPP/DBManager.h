@@ -9,7 +9,6 @@ using namespace std;
 class DBManager
 {
 public:
-	void Test();
     void AddProfileToDB(PlayerProfile profile);
 	bool IsProfileValid(string login, string password);
 	bool IsLoginUsed(string login);

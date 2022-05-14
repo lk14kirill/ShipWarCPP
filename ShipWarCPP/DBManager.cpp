@@ -1,32 +1,8 @@
 #include "DBManager.h"
 #include "PlayerProfile.h"
 #include <pqxx/pqxx>
+using namespace std;
 
-void DBManager::Test()
-{
-
-    std::string connectionString = "host=localhost port=5432 dbname=ShipWar user=postgres password = shipwarcpp";
-
-    try
-    {
-        pqxx::connection connectionObject(connectionString.c_str());
-
-        pqxx::work worker(connectionObject);
-
-        pqxx::result response = worker.exec("SELECT * FROM \"Profiles\"");
-
-        for (size_t i = 0; i < response.size(); i++)
-        {
-            std::cout << "Id: " << response[i][0] << " Username: " << response[i][1] << " Password: " << response[i][2] << " Email: " << response[i][3] << std::endl;
-        }
-    }
-    catch (const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-
-    system("pause");
-}
 void DBManager::AddProfileToDB(PlayerProfile profile)
 {
     try
@@ -38,6 +14,7 @@ void DBManager::AddProfileToDB(PlayerProfile profile)
             (int)profile.GetType(),
             profile.GetLogin(),
             profile.GetPassword());
+            
         pqxx::connection connectionObject(connectionString.c_str());
         pqxx::work worker(connectionObject);
         pqxx::result response = worker.exec0(sqlAdd);
@@ -81,7 +58,7 @@ bool DBManager::IsProfileValid(string login, string password)
     }
     catch (const std::exception& e)
     {
-        std::cerr << e.what() << std::endl;
+        //std::cerr << e.what() << std::endl;
         return false;
     }
 }
@@ -99,7 +76,8 @@ bool DBManager::IsLoginUsed(string login)
     }
     catch (const std::exception& e)
     {
-        std::cerr << e.what() << std::endl;
+        //std::cerr << e.what() << std::endl;
+        std::cout << "Login is free." << endl;
         return false;
     }
 }

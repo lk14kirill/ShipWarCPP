@@ -3,6 +3,7 @@
 #include "Values.h"
 #include "Point.h"
 #include "Ship.h"
+#define byte char
 #include <windows.h>
 #include <iostream>
 void Drawer::Draw(vector<vector<char>> field,Player* player)

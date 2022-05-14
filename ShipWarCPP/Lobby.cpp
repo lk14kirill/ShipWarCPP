@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "UI.h"
 #include "Matchmaker.h"
+#define byte char
 #include <windows.h>
 #include <tuple>
 #include "DBManager.h"
@@ -11,6 +12,8 @@
 void Lobby::Start()
 {
 	int gamesCount = 0;
+
+	dbManager = new DBManager();
 
 	UI::Greetings();
 
@@ -42,12 +45,12 @@ Lobby::~Lobby()
 }
 void Lobby::SetupPlayers()
 {
-	int shipsQuantity = UI::AskForShipQuantity();
 	PlayerProfile firstProfile = GetAccount();
 	PlayerProfile secondProfile = GetAccount();
+
+	int shipsQuantity = UI::AskForShipQuantity();
 		
 	tuple<bool, bool> areShipsHidden = Matchmaker::DefineWhosShipsAreHidden(firstProfile.GetType(), secondProfile.GetType());
-
 
 	player1 = new Player(firstProfile.GetName(), shipsQuantity, firstProfile.GetType(), get<0>(areShipsHidden));
 	player2 = new Player(secondProfile.GetName(), shipsQuantity,secondProfile.GetType(), get<1>(areShipsHidden));
@@ -71,5 +74,7 @@ PlayerProfile Lobby::GetAccount()
 		profile = UI::GetValuesForNewAccount(dbManager);
 		dbManager->AddProfileToDB(profile);
 	}
+	cout << "Player is ready" << endl;
+	cout << endl;
 	return profile;
 }

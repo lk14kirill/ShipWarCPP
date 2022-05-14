@@ -5,6 +5,11 @@
 #include "UI.h"
 #include "Point.h"
 #include "Ship.h"
+#define byte char
+#include <windows.h>
+#include <iostream>
+
+using namespace std;
 
 Game::Game()
 {

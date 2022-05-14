@@ -1,6 +1,7 @@
 #include <cctype>
 #include <iostream>
 #include "Player.h"
+#define byte char
 #include <windows.h>
 #include "UI.h"
 #include "Drawer.h"
@@ -36,7 +37,7 @@ void UI::Greetings()
 }
 bool UI::DoYouHaveAccount()
 {
-	WriteColoredSentence("Do you have account?Y/n", 15);
+	WriteColoredSentence("Do you have account?Y/n", 11);
 	while (true)
 	{
 		string answer = "";
@@ -54,43 +55,43 @@ PlayerProfile UI::GetValuesForNewAccount(DBManager * dbManager)
 	string name;
 	string login;
 	string password;
-	WriteColoredSentence("---Account creation---", 15);
-	WriteColoredSentence("Type your name(it will be shown in game)", 15);
+	WriteColoredSentence("---Account creation---", 11);
+	WriteColoredSentence("Type your name(it will be shown in game)", 11);
 	cin >> name;
 
-	WriteColoredSentence("Type your login", 15);
+	WriteColoredSentence("Type your login", 11);
 	cin >> login;
 
 	while (dbManager->IsLoginUsed(login))
 	{
-		WriteColoredSentence("This login is used.Type your login", 15);
+		WriteColoredSentence("This login is used.Type your login", 11);
 		cin >> login;
 	}
 
-	WriteColoredSentence("Type your password", 15);
+	WriteColoredSentence("Type your password", 11);
 	cin >> password;
 	return PlayerProfile(name, 0, AskForPlayerType(), login, password);
 }
 tuple<string,string> UI::GetValuesForExistingAccount(DBManager* dbManager)
 {
     string login;  
-	string password;
+	string password; 
 	do
 	{
 		tuple<string,string> logAndPswrd= GetLoginAndPassword(); // neyveren
 		login = get<0>(logAndPswrd);
 		password = get<1>(logAndPswrd);
 
-	} while (dbManager->IsProfileValid(login, password));
+	} while (!dbManager->IsProfileValid(login, password));
 	return make_tuple(login, password);
 }
 tuple<string,string> UI::GetLoginAndPassword()
 {
 	string login;
 	string password;
-	WriteColoredSentence("Type your login", 15);
+	WriteColoredSentence("Type your login", 11);
 	cin >> login;
-	WriteColoredSentence("Type your password", 15);
+	WriteColoredSentence("Type your password", 11);
 	cin >> password;
 	return make_tuple(login, password);
 }
@@ -133,7 +134,7 @@ int UI::AskForShipQuantity()
 
 	while(true)
 	{
-		WriteColoredSentence("Type quantity of ships(between 1 and " + to_string(maximum) + ")", 10);
+		WriteColoredSentence("Type quantity of ships(between 1 and " + to_string(maximum) + ")", 11);
 		cin >> quant;
 		if (quant > 0 && quant <= maximum)
 			return quant;
